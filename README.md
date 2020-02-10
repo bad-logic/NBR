@@ -17,16 +17,17 @@ FILES/FOLDER DESCRIPTION:
 5. datasets=> and their .npy files.
 6. augmented datasets => and their .npy files.
 7. nepaliBarnamala consists of:
-    .h5 model files ready for using to predict the audio clips.
-    .npy files of datasets.
-    mfcc calculation scripts.
-    datasets training scripts.
-    dataset (audio) recording scripts.
-8. webframe_Project is the web application of this project. Just run server and check it out in web browser
+    i. .h5 model files ready for using to predict the audio clips.
+    ii. .npy files of datasets.
+    iii.mfcc calculation scripts.
+    iv. datasets training scripts.
+    v. dataset (audio) recording scripts.
+8. webframe_Project is the web application of this project. 
+==> Just run server and check it out in web browser.
 ==> current web application uses model1_aug.h5 model (whose architecture can be printed with the python script          print_model.py).
 ==> you can change the model and use other models (.h5 files inside nepaliBarnamala folder) to check the 
-accuracy of the models
-===> or train your own models and use that model in the web application
-===> current .npy files contains the audio of the project members thus the application will only give accurate results
-===> for the voice of the project members only
-===> Recommended to record your own datasets and train them using your CNN model architecture and use it in the web application
+accuracy of the models.
+===> or train your own models and use that model in the web application.
+===> current .npy files contains the audio of the project members thus the application will only give accurate results.
+===> for the voice of the project members only.
+===> Recommended to record your own datasets and train them using your CNN model architecture and use it in the web application.
