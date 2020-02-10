@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <title> वर्णमाला </title>
+  <style>
+    .wrapper {
+        text-align: center;
+        }
+    </style>
+    <script>
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+	       animationEnabled: true,
+	       theme: "light2",
+           axisX: {
+    	          interval: 1,
+                },
+	       axisY: {
+		             title: "Percentage",
+                     interval: 10,
+                     gridThickness: 0,
+    	             tickLength: 0,
+    	             labelFormatter: function(){
+      	             return " ";
+   		            }
+	               },
+   	       dataPointWidth: 20,
+	       data: [{
+		   type: "column",
+      	   color: "rgb(27, 188, 155)",
+		   showInLegend: true,
+		   legendMarkerColor: "grey",
+		   legendText: "वर्ण",
+           dataPoints: [
+            { y: {{values.noise}},  label:"noise"},
+			{ y: {{values.क}}, label: "क" },
+			{ y: {{values.ख}}, label: "ख" },
+			{ y: {{values.ग}},  label: "ग" },
+			{ y: {{values.घ}},  label: "घ" },
+			{ y: {{values.ङ}},  label: "ङ" },
+			{ y: {{values.च}},  label: "च" },
+			{ y: {{values.छ}},  label: "छ" },
+            { y: {{values.ज}},  label: "ज" },
+            { y: {{values.झ}},  label: "झ" },
+            { y: {{values.ञ}},  label: "ञ" },
+            { y: {{values.ट}},  label: "ट" },
+            { y: {{values.ठ}},  label: "ठ" },
+            { y: {{values.ड}},  label: "ड" },
+            { y: {{values.ढ}},  label: "ढ" },
+            { y: {{values.ण}},  label: "ण" },
+            { y: {{values.त}},  label: "त" },
+            { y: {{values.थ}},  label: "थ" },
+            { y: {{values.द}},  label: "द" },
+            { y: {{values.ध}},  label: "ध" },
+            { y: {{values.न}},  label: "न" },
+            { y: {{values.प}},  label: "प" },
+            { y: {{values.फ}},  label: "फ" },
+            { y: {{values.ब}},  label: "ब" },
+            { y: {{values.भ}},  label: "भ" },
+            { y: {{values.म}},  label: "म" },
+            { y: {{values.य}},  label: "य" },
+            { y: {{values.र}},  label: "र" },
+            { y: {{values.ल}},  label: "ल" },
+            { y: {{values.व}},  label: "व" },
+            { y: {{values.स}},  label: "श।स।ष" },
+            { y: {{values.ह}},  label: "ह" },
+            { y: {{values.xchya}},  label: "क्ष" },
+            { y: {{values.tra}},  label: "त्र" },
+            { y: {{values.gya}},  label: "ज्ञ" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body style="background-color:powderblue;">
+
+    <h1 style = "text-align:center;"> <b> <u> नेपाली वर्णमाला पाहिचान। </u> </b></h1>
+    <h2  style = "text-align:center;">नेपाली वर्णहरु।</h2>
+    <font size = "6">
+    <pre style = "text-align:center;">
+     क  ख  ग  घ  ङ  च  छ  ज  झ  य  ट  ठ
+     ड  ढ  ण  त  थ  द  ध  न  प  फ  ब  भ
+     म  य  र  ल  व  श  स  ष  ह  क्ष  त्र  ज्ञ
+    </pre>
+    </font>
+    <font size = "5">
+    {% if max == 'स' %}
+        <pre><h4><b> <pre>OUR PREDICTION: श।स।ष </b></h4></pre>
+    {% elif max == 'xchya' %}
+        <pre><h4><b> <pre>OUR PREDICTION: क्ष </b></h4></pre>
+    {% elif max == 'tra' %}
+        <pre><h4><b> OUR PREDICTION: त्र </b></h4></pre>
+    {% elif max == 'gya' %}
+        <pre><h4><b> OUR PREDICTION: ज्ञ </b></h4></pre>
+    {%else%}
+        <pre><h4><b> OUR PREDICTION: {{max}} </b></h4></pre>
+    {% endif %}
+    </font>
+
+    <a href="{%url 'home'%}">Try Again</a>
+    <h4 style="text-align:center">Prediction percentages:</h4>
+
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+
+</body>
+
+</html>

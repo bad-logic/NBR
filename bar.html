@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+    axisX: {
+    	interval: 1,
+    },
+	axisY: {
+		title: "Percentage",
+        interval: 10,
+        gridThickness: 0,
+    	tickLength: 0,
+    	labelFormatter: function(){
+      	return " ";
+   		 }
+	},
+   	dataPointWidth: 20,
+	data: [{        
+		type: "column",  
+      	color: "rgb(27, 188, 155)",
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Alphabets",
+		dataPoints: [      
+			{ y: 30, label: "Ka" },
+			{ y: 70,  label: "Kha" },
+			{ y: 0,  label: "Ga" },
+			{ y: 0,  label: "Gha" },
+			{ y: 0,  label: "Nga" },
+			{ y: 0,  label: "Cha" },
+			{ y: 0,  label: "Chaa" },
+            { y: 0,  label: "ja" },
+            { y: 0,  label: "Jha" },
+            { y: 0,  label: "Ya" },
+            { y: 0,  label: "Ta" },
+            { y: 0,  label: "Tha" },
+            { y: 0,  label: "Da" },
+            { y: 0,  label: "Dha" },
+            { y: 0,  label: "Ana" },
+            { y: 0,  label: "ta" },
+            { y: 0,  label: "tha" },
+            { y: 0,  label: "da" },
+            { y: 0,  label: "dha" },
+            { y: 0,  label: "na" },
+            { y: 0,  label: "Pa" },
+            { y: 0,  label: "Fa" },
+            { y: 0,  label: "Ba" },
+            { y: 0,  label: "Bha" },
+            { y: 0,  label: "Ma" },
+            { y: 0,  label: "Ya" },
+            { y: 0,  label: "Ra" },
+            { y: 0,  label: "La" },
+            { y: 0,  label: "Wa" },
+            { y: 0,  label: "Sa" },
+            { y: 0,  label: "Ha" },
+            { y: 0,  label: "Chya" },
+            { y: 0,  label: "Tra" },
+            { y: 0,  label: "Gya" }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

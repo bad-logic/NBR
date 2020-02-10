@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <title> वर्णमाला </title>
+  <style>
+    .wrapper {
+        text-align: center;
+        }
+    </style>
+    <script>
+
+}
+</script>
+<link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}" />
+		<!link rel="stylesheet" type="text/css" href="{% static 'demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'component.css' %}" />
+		<script src="{% static 'modernizr.custom.js' %}"></script>
+</head>
+
+<body style="background-color:powderblue;">
+
+    <h1 style = "text-align:center;"> <b> <u> नेपाली वर्णमाला पाहिचान। </u> </b></h1>
+    <h2  style = "text-align:center;">नेपाली वर्णहरु।<h2>
+    <font size = "6">
+    <pre style = "text-align:center;">
+     क  ख  ग  घ  ङ  च  छ  ज  झ  य  ट  ठ
+     ड  ढ  ण  त  थ  द  ध  न  प  फ  ब  भ
+     म  य  र  ल  व  श  स  ष  ह  क्ष  त्र  ज्ञ
+    </pre>
+    </font>
+    <div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+			</header>
+			<section>
+                <div class="box">
+					<!-- progress button -->
+					<div class="progress-button">
+                        <form action={% url 'record' %}>
+						<button><span>Record</span></button>
+						<svg class="progress-circle" width="70" height="70"><path d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/></svg>
+						<svg class="checkmark" width="70" height="70"><path d="m31.5,46.5l15.3,-23.2"/><path d="m31.5,46.5l-8.5,-7.1"/></svg>
+						<svg class="cross" width="70" height="70"><path d="m35,35l-9.3,-9.3"/><path d="m35,35l9.3,9.3"/><path d="m35,35l-9.3,9.3"/><path d="m35,35l9.3,-9.3"/></svg>
+                        </form>
+                    </div><!-- /progress-button -->
+                    <div class="progress-button">
+                        <form action={% url 'predict' %}>
+                        <button><span>Predict</span></button>
+                        </form>
+                    </div>
+				</div>
+			</section>
+		</div><!-- /container -->
+		<script src="{% static 'classie.js' %}"></script>
+		<script src="{% static 'uiProgressButton.js' %}"></script>
+		<script>
+			[].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
+				new UIProgressButton( bttn, {
+					callback : function( instance ) {
+						var progress = 0,
+							interval = setInterval( function() {
+								progress = Math.min( progress + 0.3, 1 );
+								instance.setProgress( progress );
+
+								if( progress === 1 ) {
+									instance.stop( pos === 1 || pos === 3 ? -1 : 1 );
+									clearInterval( interval );
+								}
+							}, 150 );
+					}
+				} );
+			} );
+		</script>
+
+</body>
+
+</html>
