@@ -1,4 +1,7 @@
-NEPALI BARNA RECOGNITION (NBR):
+# NEPALI BARNA RECOGNITION (NBR)
+## University Project
+
+#### Simple Web Application For Detecting Nepali Alphabets ( speech to text )
 
 NOTE: Projects Reports and mfcc detail file are attached to this project for understanding the projects pupose and
 implementation.
