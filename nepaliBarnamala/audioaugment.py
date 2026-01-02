@@ -8,6 +8,12 @@ Brian McFee, Eric J. Humphrey, and Juan P. Bello
 https://bmcfee.github.io/papers/ismir2015_augmentation.pdf
 
 '''
+
+# Adapted from panotti by Scott Hawley (https://github.com/drscotthawley/panotti)
+# Original file: utils/augment_audio.py
+# Licensed under the MIT License
+
+
 from __future__ import print_function
 import numpy as np
 import librosa
